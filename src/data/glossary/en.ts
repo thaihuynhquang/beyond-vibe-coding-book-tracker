@@ -1,0 +1,241 @@
+import type { GlossaryTerm } from "../../types/appState";
+
+export const GLOSSARY_EN: GlossaryTerm[] = [
+  // Chapter 1 — Going with the Vibe
+  {
+    id: "term-vibe-coding",
+    name: "Vibe coding",
+    chapterIds: ["ch-1"],
+    description: "Coding by describing intent to an AI in prompts and accepting the generated code without close review — a term coined by Andrej Karpathy in February 2025 (1.1).",
+    refUrl: "https://en.wikipedia.org/wiki/Vibe_coding",
+  },
+  {
+    id: "term-prompt-engineering",
+    name: "Prompt engineering",
+    chapterIds: ["ch-1"],
+    description: "The craft of designing prompts to steer an LLM toward the desired output — the subject of \"Improving Your Prompts\" (1.2).",
+    refUrl: "https://en.wikipedia.org/wiki/Prompt_engineering",
+  },
+  {
+    id: "term-system-prompt",
+    name: "System prompt",
+    chapterIds: ["ch-1"],
+    description: "A standing instruction sent ahead of the conversation to shape the AI assistant's behavior for the whole session.",
+    refUrl: "https://www.promptingguide.ai/introduction",
+  },
+  {
+    id: "term-temperature",
+    name: "Temperature (sampling)",
+    chapterIds: ["ch-1"],
+    description: "A parameter that controls how random the LLM's next-token choice is — low temperature gives stable output, high gives more creative/unpredictable output.",
+    refUrl: "https://www.promptingguide.ai/introduction/settings",
+  },
+  {
+    id: "term-hallucination",
+    name: "Hallucination (AI)",
+    chapterIds: ["ch-1", "ch-4"],
+    description: "When an AI produces plausible-sounding but wrong or invented information/code — why \"What Went Wrong\" (1.4) happens, and why AI-generated docs need review in chapter 4.",
+    refUrl: "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+  },
+  {
+    id: "term-spec-driven-development",
+    name: "Spec-driven development",
+    chapterIds: ["ch-1", "ch-3"],
+    description: "Writing a clear specification before letting the AI code, instead of free-form prompting — the subject of \"Using Specifications to Drive Assistants\" (1.5).",
+    refUrl: "https://github.com/github/spec-kit",
+  },
+  {
+    id: "term-acceptance-criteria",
+    name: "Acceptance criteria",
+    chapterIds: ["ch-1", "ch-3"],
+    description: "A concrete checklist confirming a feature/spec is done — core to checking whether the AI actually followed the spec.",
+    refUrl: "https://en.wikipedia.org/wiki/Acceptance_testing",
+  },
+
+  // Chapter 2 — Building Securely and Predictably
+  {
+    id: "term-one-prompt-one-commit",
+    name: "One prompt, one commit",
+    chapterIds: ["ch-2"],
+    description: "A discipline where each prompt sent to the AI produces exactly one commit, making review and revert easy — the core idea of 2.2.",
+    refUrl: "https://cbea.ms/git-commit/",
+  },
+  {
+    id: "term-rules-file",
+    name: "Rules file (AGENTS.md / CLAUDE.md)",
+    chapterIds: ["ch-2"],
+    description: "A standing instructions file the AI assistant automatically reads before coding, keeping it \"well-behaved\" across the whole project (2.3 An AI with Good Habits).",
+    refUrl: "https://www.anthropic.com/engineering/claude-code-best-practices",
+  },
+  {
+    id: "term-embedding",
+    name: "Embedding (vector embedding)",
+    chapterIds: ["ch-2", "ch-a1"],
+    description: "A numeric vector representation of text used to compare semantic similarity — the foundation of the chapter 2 semantic search lab.",
+    refUrl: "https://platform.openai.com/docs/guides/embeddings",
+  },
+  {
+    id: "term-vector-database",
+    name: "Vector database",
+    chapterIds: ["ch-2", "ch-a1"],
+    description: "A database specialized in storing and querying embeddings by nearest-neighbor similarity — used to build the LLM Empowered Semantic Search tool.",
+    refUrl: "https://en.wikipedia.org/wiki/Vector_database",
+  },
+  {
+    id: "term-semantic-search",
+    name: "Semantic search",
+    chapterIds: ["ch-2"],
+    description: "Searching by the meaning of a query instead of exact keyword matching — what the 5 \"Build LLM Empowered Semantic Search tool\" videos build toward.",
+    refUrl: "https://en.wikipedia.org/wiki/Semantic_search",
+  },
+  {
+    id: "term-rag",
+    name: "RAG (Retrieval-Augmented Generation)",
+    chapterIds: ["ch-2"],
+    description: "A technique combining data retrieval (usually via a vector database) with an LLM to ground answers and reduce hallucination.",
+    refUrl: "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+  },
+  {
+    id: "term-commit-discipline",
+    name: "Commit discipline",
+    chapterIds: ["ch-2"],
+    description: "The habit of writing clear, well-scoped commit messages, directly supporting \"one prompt, one commit\" and reviewing AI-generated code.",
+    refUrl: "https://www.conventionalcommits.org/",
+  },
+
+  // Chapter 3 — Learning by Coding
+  {
+    id: "term-walking-skeleton",
+    name: "Walking skeleton",
+    chapterIds: ["ch-3"],
+    description: "A minimal, end-to-end runnable slice (UI → logic → output) used to prove the architecture works before building further — the subject of 3.3.",
+    refUrl: "http://www.extremeprogramming.org/rules/skeleton.html",
+  },
+  {
+    id: "term-domain-modeling",
+    name: "Domain modeling",
+    chapterIds: ["ch-3"],
+    description: "Identifying the core concepts, structs, and business rules of a problem before writing detailed code — 3.4 Modeling the Domain.",
+    refUrl: "https://en.wikipedia.org/wiki/Domain-driven_design",
+  },
+
+  // Chapter 4 — Working on a Large Codebase
+  {
+    id: "term-technical-debt",
+    name: "Technical debt",
+    chapterIds: ["ch-4"],
+    description: "The future cost of picking a fast/easy solution over a more correct one — the subject of \"Managing Technical Debt\" (4.1).",
+    refUrl: "https://en.wikipedia.org/wiki/Technical_debt",
+  },
+  {
+    id: "term-legacy-code",
+    name: "Legacy code",
+    chapterIds: ["ch-4"],
+    description: "Old code, often under-tested and risky to change — 4.2 Understanding Legacy Code covers how AI can help approach it.",
+    refUrl: "https://en.wikipedia.org/wiki/Legacy_system",
+  },
+  {
+    id: "term-mermaid-diagram",
+    name: "Mermaid diagram",
+    chapterIds: ["ch-4"],
+    description: "A text-to-diagram syntax for drawing flowcharts/sequence diagrams — used in the \"Generating Mermaid Documentation Diagrams with AI Assistants\" video.",
+    refUrl: "https://mermaid.js.org/",
+  },
+  {
+    id: "term-code-review-with-ai",
+    name: "Code review with AI",
+    chapterIds: ["ch-4", "ch-5"],
+    description: "Using an AI assistant to help read/review code (human- or AI-written) before merging — a thread running through chapters 4 and 5.",
+    refUrl: "https://github.blog/ai-and-ml/generative-ai/how-to-use-github-copilot-in-your-code-review-process/",
+  },
+
+  // Chapter 5 — Collaborating Inside an AI-Powered Team
+  {
+    id: "term-agent",
+    name: "AI agent",
+    chapterIds: ["ch-5"],
+    description: "An LLM-based system that can plan, call tools, and act over multiple steps toward a goal, rather than answering in a single turn — the basis of \"Adopting AI\" (5.1).",
+    refUrl: "https://www.anthropic.com/research/building-effective-agents",
+  },
+  {
+    id: "term-mcp",
+    name: "Model Context Protocol (MCP)",
+    chapterIds: ["ch-5"],
+    description: "An open standard from Anthropic for AI assistants to connect uniformly to external tools/data — relevant to how a team shares AI tooling.",
+    refUrl: "https://modelcontextprotocol.io/introduction",
+  },
+  {
+    id: "term-pair-programming-with-ai",
+    name: "Pair programming with AI",
+    chapterIds: ["ch-5"],
+    description: "A variant of traditional pair programming where one \"person\" is an AI assistant — discussed in \"Team Organization\" (5.2).",
+    refUrl: "https://en.wikipedia.org/wiki/Pair_programming",
+  },
+  {
+    id: "term-prompt-injection",
+    name: "Prompt injection",
+    chapterIds: ["ch-5"],
+    description: "An attack that hides malicious instructions inside content the AI reads (a file, a webpage, tool output) to make it act against the user's intent — a security risk covered in 5.3.",
+    refUrl: "https://en.wikipedia.org/wiki/Prompt_injection",
+  },
+
+  // Appendix A1 — Demystifying Large Language Models
+  {
+    id: "term-llm",
+    name: "Large Language Model (LLM)",
+    chapterIds: ["ch-a1"],
+    description: "A large-scale language model trained on huge text corpora to predict the next token — the central topic of \"What Are Large Language Models?\" (6.2).",
+    refUrl: "https://en.wikipedia.org/wiki/Large_language_model",
+  },
+  {
+    id: "term-transformer",
+    name: "Transformer (architecture)",
+    chapterIds: ["ch-a1"],
+    description: "The neural network architecture built on the attention mechanism that underlies most modern LLMs, introduced in \"Attention Is All You Need\" (6.1).",
+    refUrl: "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)",
+    specUrl: "https://arxiv.org/abs/1706.03762",
+  },
+  {
+    id: "term-attention-mechanism",
+    name: "Attention mechanism",
+    chapterIds: ["ch-a1"],
+    description: "The mechanism letting a model weigh which tokens in the input sequence matter most — the centerpiece of 6.1 Attention Is All You Need.",
+    refUrl: "https://en.wikipedia.org/wiki/Attention_(machine_learning)",
+    specUrl: "https://arxiv.org/abs/1706.03762",
+  },
+  {
+    id: "term-tokenization",
+    name: "Tokenization",
+    chapterIds: ["ch-a1"],
+    description: "Splitting text into tokens, the small units an LLM actually processes — needed to understand why context windows are measured in tokens, not characters.",
+    refUrl: "https://platform.openai.com/tokenizer",
+  },
+  {
+    id: "term-context-window",
+    name: "Context window",
+    chapterIds: ["ch-a1"],
+    description: "The maximum number of tokens an LLM can \"remember\" in one pass — the practical limit discussed in \"Considerations\" (6.4).",
+    refUrl: "https://www.ibm.com/think/topics/context-window",
+  },
+  {
+    id: "term-fine-tuning",
+    name: "Fine-tuning",
+    chapterIds: ["ch-a1"],
+    description: "Further training an existing LLM on a small, specialized dataset so it fits a specific task or domain better.",
+    refUrl: "https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)",
+  },
+  {
+    id: "term-inference",
+    name: "Inference (LLM)",
+    chapterIds: ["ch-a1"],
+    description: "The stage where a trained model generates output for new input — as opposed to training, and what you actually pay for when calling an LLM API.",
+    refUrl: "https://www.ibm.com/think/topics/ai-inference",
+  },
+  {
+    id: "term-quantization",
+    name: "Quantization",
+    chapterIds: ["ch-a1"],
+    description: "Reducing the numeric precision of a model's weights (e.g. 32-bit → 4-bit) to run lighter and faster, trading off some accuracy.",
+    refUrl: "https://www.ibm.com/think/topics/quantization-aware-training",
+  },
+];

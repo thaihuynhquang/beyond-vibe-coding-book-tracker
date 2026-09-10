@@ -1,0 +1,241 @@
+import type { GlossaryTerm } from "../../types/appState";
+
+export const GLOSSARY_VI: GlossaryTerm[] = [
+  // Chapter 1 — Going with the Vibe
+  {
+    id: "term-vibe-coding",
+    name: "Vibe coding",
+    chapterIds: ["ch-1"],
+    description: "Lập trình bằng cách mô tả ý muốn cho AI qua prompt và chấp nhận code sinh ra mà không đọc kỹ — thuật ngữ do Andrej Karpathy đặt ra tháng 2/2025 (1.1).",
+    refUrl: "https://en.wikipedia.org/wiki/Vibe_coding",
+  },
+  {
+    id: "term-prompt-engineering",
+    name: "Prompt engineering",
+    chapterIds: ["ch-1"],
+    description: "Kỹ thuật thiết kế prompt để dẫn dắt LLM ra kết quả mong muốn — chủ đề của \"Improving Your Prompts\" (1.2).",
+    refUrl: "https://en.wikipedia.org/wiki/Prompt_engineering",
+  },
+  {
+    id: "term-system-prompt",
+    name: "System prompt",
+    chapterIds: ["ch-1"],
+    description: "Chỉ dẫn nền được gửi trước hội thoại để định hình hành vi AI assistant xuyên suốt phiên làm việc.",
+    refUrl: "https://www.promptingguide.ai/introduction",
+  },
+  {
+    id: "term-temperature",
+    name: "Temperature (sampling)",
+    chapterIds: ["ch-1"],
+    description: "Tham số điều chỉnh độ ngẫu nhiên khi LLM sinh token tiếp theo — temperature thấp cho output ổn định, cao cho output sáng tạo/khó đoán hơn.",
+    refUrl: "https://www.promptingguide.ai/introduction/settings",
+  },
+  {
+    id: "term-hallucination",
+    name: "Hallucination (AI)",
+    chapterIds: ["ch-1", "ch-4"],
+    description: "AI sinh ra thông tin/code nghe hợp lý nhưng sai hoặc bịa — lý do \"What Went Wrong\" (1.4) xảy ra và tại sao phải review tài liệu AI sinh ở chương 4.",
+    refUrl: "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+  },
+  {
+    id: "term-spec-driven-development",
+    name: "Spec-driven development",
+    chapterIds: ["ch-1", "ch-3"],
+    description: "Viết đặc tả (spec) rõ ràng trước khi để AI code, thay vì prompt tự do — chủ đề \"Using Specifications to Drive Assistants\" (1.5).",
+    refUrl: "https://github.com/github/spec-kit",
+  },
+  {
+    id: "term-acceptance-criteria",
+    name: "Acceptance criteria",
+    chapterIds: ["ch-1", "ch-3"],
+    description: "Danh sách điều kiện cụ thể để xác nhận một tính năng/đặc tả đã hoàn thành — cốt lõi để kiểm tra AI có làm đúng spec hay không.",
+    refUrl: "https://en.wikipedia.org/wiki/Acceptance_testing",
+  },
+
+  // Chapter 2 — Building Securely and Predictably
+  {
+    id: "term-one-prompt-one-commit",
+    name: "One prompt, one commit",
+    chapterIds: ["ch-2"],
+    description: "Kỷ luật làm việc: mỗi prompt gửi AI chỉ tạo ra đúng 1 commit, giúp review và revert dễ dàng — chủ đề chính của 2.2.",
+    refUrl: "https://cbea.ms/git-commit/",
+  },
+  {
+    id: "term-rules-file",
+    name: "Rules file (AGENTS.md / CLAUDE.md)",
+    chapterIds: ["ch-2"],
+    description: "File chỉ dẫn cố định mà AI assistant tự động đọc trước khi code, giữ nó \"có thói quen tốt\" xuyên suốt dự án (2.3 An AI with Good Habits).",
+    refUrl: "https://www.anthropic.com/engineering/claude-code-best-practices",
+  },
+  {
+    id: "term-embedding",
+    name: "Embedding (vector embedding)",
+    chapterIds: ["ch-2", "ch-a1"],
+    description: "Biểu diễn văn bản dưới dạng vector số để so sánh độ tương đồng ngữ nghĩa — nền tảng của semantic search ở Lab chương 2.",
+    refUrl: "https://platform.openai.com/docs/guides/embeddings",
+  },
+  {
+    id: "term-vector-database",
+    name: "Vector database",
+    chapterIds: ["ch-2", "ch-a1"],
+    description: "Cơ sở dữ liệu chuyên lưu và truy vấn embedding theo độ tương đồng (nearest neighbor) — dùng để xây LLM Empowered Semantic Search tool.",
+    refUrl: "https://en.wikipedia.org/wiki/Vector_database",
+  },
+  {
+    id: "term-semantic-search",
+    name: "Semantic search",
+    chapterIds: ["ch-2"],
+    description: "Tìm kiếm theo nghĩa của câu truy vấn thay vì khớp từ khoá chính xác — kết quả mà 5 video \"Build LLM Empowered Semantic Search tool\" hướng tới.",
+    refUrl: "https://en.wikipedia.org/wiki/Semantic_search",
+  },
+  {
+    id: "term-rag",
+    name: "RAG (Retrieval-Augmented Generation)",
+    chapterIds: ["ch-2"],
+    description: "Kỹ thuật kết hợp truy xuất dữ liệu (thường qua vector database) với LLM để trả lời có căn cứ, giảm hallucination.",
+    refUrl: "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+  },
+  {
+    id: "term-commit-discipline",
+    name: "Commit discipline",
+    chapterIds: ["ch-2"],
+    description: "Thói quen viết commit message rõ ràng, đúng phạm vi, hỗ trợ trực tiếp cho \"one prompt, one commit\" và review AI-generated code.",
+    refUrl: "https://www.conventionalcommits.org/",
+  },
+
+  // Chapter 3 — Learning by Coding
+  {
+    id: "term-walking-skeleton",
+    name: "Walking skeleton",
+    chapterIds: ["ch-3"],
+    description: "Phiên bản tối thiểu chạy được xuyên suốt end-to-end (UI → logic → output), dùng để chứng minh kiến trúc thông trước khi phát triển tiếp — chủ đề của 3.3.",
+    refUrl: "http://www.extremeprogramming.org/rules/skeleton.html",
+  },
+  {
+    id: "term-domain-modeling",
+    name: "Domain modeling",
+    chapterIds: ["ch-3"],
+    description: "Xác định các khái niệm, struct, quy tắc nghiệp vụ cốt lõi của bài toán trước khi code chi tiết — 3.4 Modeling the Domain.",
+    refUrl: "https://en.wikipedia.org/wiki/Domain-driven_design",
+  },
+
+  // Chapter 4 — Working on a Large Codebase
+  {
+    id: "term-technical-debt",
+    name: "Technical debt",
+    chapterIds: ["ch-4"],
+    description: "Chi phí phải trả sau này vì chọn giải pháp nhanh/dễ thay vì giải pháp đúng đắn hơn — chủ đề \"Managing Technical Debt\" (4.1).",
+    refUrl: "https://en.wikipedia.org/wiki/Technical_debt",
+  },
+  {
+    id: "term-legacy-code",
+    name: "Legacy code",
+    chapterIds: ["ch-4"],
+    description: "Code cũ, thường thiếu test, khó thay đổi an toàn — 4.2 Understanding Legacy Code bàn cách AI hỗ trợ tiếp cận nó.",
+    refUrl: "https://en.wikipedia.org/wiki/Legacy_system",
+  },
+  {
+    id: "term-mermaid-diagram",
+    name: "Mermaid diagram",
+    chapterIds: ["ch-4"],
+    description: "Cú pháp text-to-diagram để vẽ flowchart/sequence diagram — dùng trong video \"Generating Mermaid Documentation Diagrams with AI Assistants\".",
+    refUrl: "https://mermaid.js.org/",
+  },
+  {
+    id: "term-code-review-with-ai",
+    name: "Code review with AI",
+    chapterIds: ["ch-4", "ch-5"],
+    description: "Dùng AI assistant hỗ trợ đọc/soát code (của người hoặc của chính AI khác sinh ra) trước khi merge — chủ đề xuyên suốt chương 4 và 5.",
+    refUrl: "https://github.blog/ai-and-ml/generative-ai/how-to-use-github-copilot-in-your-code-review-process/",
+  },
+
+  // Chapter 5 — Collaborating Inside an AI-Powered Team
+  {
+    id: "term-agent",
+    name: "AI agent",
+    chapterIds: ["ch-5"],
+    description: "Hệ thống LLM có thể tự lên kế hoạch, gọi tool, và hành động nhiều bước để đạt mục tiêu, thay vì chỉ trả lời 1 lượt — nền tảng của \"Adopting AI\" (5.1).",
+    refUrl: "https://www.anthropic.com/research/building-effective-agents",
+  },
+  {
+    id: "term-mcp",
+    name: "Model Context Protocol (MCP)",
+    chapterIds: ["ch-5"],
+    description: "Chuẩn mở do Anthropic giới thiệu để AI assistant kết nối thống nhất với công cụ/dữ liệu ngoài — liên quan tới cách team tổ chức công cụ AI dùng chung.",
+    refUrl: "https://modelcontextprotocol.io/introduction",
+  },
+  {
+    id: "term-pair-programming-with-ai",
+    name: "Pair programming with AI",
+    chapterIds: ["ch-5"],
+    description: "Biến thể của lập trình cặp đôi truyền thống, trong đó một \"người\" là AI assistant — bàn ở \"Team Organization\" (5.2).",
+    refUrl: "https://en.wikipedia.org/wiki/Pair_programming",
+  },
+  {
+    id: "term-prompt-injection",
+    name: "Prompt injection",
+    chapterIds: ["ch-5"],
+    description: "Kiểu tấn công chèn chỉ dẫn độc hại vào nội dung AI đọc được (file, trang web, output tool) để đánh lừa AI làm việc ngoài ý muốn — rủi ro bảo mật ở 5.3.",
+    refUrl: "https://en.wikipedia.org/wiki/Prompt_injection",
+  },
+
+  // Appendix A1 — Demystifying Large Language Models
+  {
+    id: "term-llm",
+    name: "Large Language Model (LLM)",
+    chapterIds: ["ch-a1"],
+    description: "Mô hình ngôn ngữ quy mô lớn học từ khối văn bản khổng lồ để dự đoán token tiếp theo — chủ đề trung tâm của \"What Are Large Language Models?\" (6.2).",
+    refUrl: "https://en.wikipedia.org/wiki/Large_language_model",
+  },
+  {
+    id: "term-transformer",
+    name: "Transformer (kiến trúc)",
+    chapterIds: ["ch-a1"],
+    description: "Kiến trúc mạng nơ-ron dùng cơ chế attention làm nền tảng cho hầu hết LLM hiện đại, giới thiệu trong paper \"Attention Is All You Need\" (6.1).",
+    refUrl: "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)",
+    specUrl: "https://arxiv.org/abs/1706.03762",
+  },
+  {
+    id: "term-attention-mechanism",
+    name: "Attention mechanism",
+    chapterIds: ["ch-a1"],
+    description: "Cơ chế cho phép model \"chú ý\" có trọng số tới các token liên quan trong chuỗi đầu vào — trung tâm của 6.1 Attention Is All You Need.",
+    refUrl: "https://en.wikipedia.org/wiki/Attention_(machine_learning)",
+    specUrl: "https://arxiv.org/abs/1706.03762",
+  },
+  {
+    id: "term-tokenization",
+    name: "Tokenization",
+    chapterIds: ["ch-a1"],
+    description: "Quá trình chia văn bản thành các token (đơn vị nhỏ) mà LLM xử lý — cần hiểu để biết vì sao context window đo bằng token, không phải ký tự.",
+    refUrl: "https://platform.openai.com/tokenizer",
+  },
+  {
+    id: "term-context-window",
+    name: "Context window",
+    chapterIds: ["ch-a1"],
+    description: "Số lượng token tối đa mà LLM \"nhớ\" được trong một lượt xử lý — giới hạn thực tế bàn ở \"Considerations\" (6.4).",
+    refUrl: "https://www.ibm.com/think/topics/context-window",
+  },
+  {
+    id: "term-fine-tuning",
+    name: "Fine-tuning",
+    chapterIds: ["ch-a1"],
+    description: "Huấn luyện tiếp một LLM có sẵn trên tập dữ liệu nhỏ, chuyên biệt để nó phù hợp hơn với một tác vụ/domain cụ thể.",
+    refUrl: "https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)",
+  },
+  {
+    id: "term-inference",
+    name: "Inference (LLM)",
+    chapterIds: ["ch-a1"],
+    description: "Giai đoạn dùng model đã huấn luyện để sinh output cho input mới — khác với giai đoạn training, là thứ bạn thực sự trả tiền khi gọi API LLM.",
+    refUrl: "https://www.ibm.com/think/topics/ai-inference",
+  },
+  {
+    id: "term-quantization",
+    name: "Quantization",
+    chapterIds: ["ch-a1"],
+    description: "Kỹ thuật giảm độ chính xác số học của trọng số model (ví dụ 32-bit → 4-bit) để chạy nhẹ hơn, nhanh hơn, đánh đổi một phần độ chính xác.",
+    refUrl: "https://www.ibm.com/think/topics/quantization-aware-training",
+  },
+];
