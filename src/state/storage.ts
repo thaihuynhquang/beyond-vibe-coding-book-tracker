@@ -20,7 +20,7 @@ function defaultState(): AppState {
     labDone: {},
     flashcardDone: {},
     activeTab: "dashboard",
-    theme: "dark",
+    theme: "light",
     lang: "vi",
     pomodoroSettings: {
       workMinutes: DEFAULT_POMODORO_WORK_MINUTES,
@@ -34,7 +34,7 @@ function defaultState(): AppState {
 function detectPreferredTheme(): Theme {
   const stored = localStorage.getItem(THEME_KEY);
   if (stored === "dark" || stored === "light") return stored;
-  return window.matchMedia?.("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 function detectPreferredLang(): Lang {

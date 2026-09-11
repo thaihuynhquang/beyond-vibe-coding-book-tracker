@@ -156,6 +156,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-mono);
   font-size: clamp(2.4rem, 11vw, var(--font-size-3xl));
   font-weight: var(--font-weight-black);
   font-variant-numeric: tabular-nums;
@@ -221,6 +222,7 @@
   border: 1px solid var(--border-color-strong);
   background: var(--bg-main);
   color: var(--text-primary);
+  font-family: var(--font-mono);
   font-weight: var(--font-weight-bold);
   text-align: center;
 }

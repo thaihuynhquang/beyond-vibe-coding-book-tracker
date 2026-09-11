@@ -4,6 +4,23 @@
   padding: var(--space-xl) var(--space-md) 4rem;
 }
 
+/* Type roles: serif for card headings, mono for numeric detail */
+.surface-card-title,
+.progress-title,
+.progress-card-header-title--lime,
+.section-heading-title {
+  font-family: var(--font-serif);
+}
+
+.metric-value,
+.progress-bar-pct,
+.progress-percentage,
+#badge-overall-pct,
+.nav-tab-badge {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -463,6 +480,7 @@ input[type="checkbox"]:focus-visible {
   background: var(--card-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 

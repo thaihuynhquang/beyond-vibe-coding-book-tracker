@@ -2,62 +2,72 @@
 
 Official UI System Design & Component Layout Guide for the **Beyond Vibe Coding Tracker**. Covers design language, tokens, component dictionary, and layout assembly. For architecture/state, see [architecture_guide.md](./architecture_guide.md).
 
-The visual system is ported unchanged from the sibling book trackers this repo was cloned from (same tokens, same layer structure, same metric-tile/status-badge language) — this document covers what's specific to this book: 6 always-expanded chapter cards, a video-and-lab list nested per chapter, and a merged Resources grid that now includes companion videos.
+The visual system follows Anthropic.com's design language (ivory paper, slate ink, clay accent, serif/sans/mono type roles) — this document covers what's specific to this book: 6 always-expanded chapter cards, a video-and-lab list nested per chapter, and a merged Resources grid that now includes companion videos.
 
 ---
 
 ## 1. Visual Design Philosophy & Tokens
 
-### 1.1. Dark-First Aesthetic with Light Mode Fallback
-Deep dark background, elevated cards, glassmorphic header blur, theme swap via `data-theme` on `<html>`.
+### 1.1. Light-First Aesthetic with a Dark Mode Opt-In
+Warm ivory background, flat 1px-bordered cards, glassmorphic header blur, theme swap via `data-theme` on `<html>` (`[data-theme="dark"]` is the opt-in override; `:root` is light/ivory by default).
 
 ### 1.2. Color Palette System (`_tokens.css`)
 
-| Token Variable | Dark Mode (Default) | Light Mode | Usage |
+Values are drawn from Anthropic's public swatch tokens (ivory/slate/clay/cactus/kraft/fig/sky/heather), darkened where needed to clear text-contrast on ivory in light mode.
+
+| Token Variable | Light Mode (Default) | Dark Mode | Usage |
 | :--- | :--- | :--- | :--- |
-| `--bg-main` | `#0d1420` | `#f4f7fa` | Main body background |
-| `--bg-card` | `#161f2e` | `#ffffff` | Surface card background |
-| `--bg-card-hover` | `#1f2b3d` | `#e9eff6` | Card hover background |
-| `--bg-glass` | `rgba(22, 31, 46, 0.78)` | `rgba(255, 255, 255, 0.85)` | Sticky header glass (`backdrop-filter: blur(12px)`) |
-| `--border-color` | `rgba(148, 176, 214, 0.16)` | `rgba(15, 37, 64, 0.12)` | Card/input/separator border — also the fill of `.progress-bar-track` |
-| `--border-color-strong` | `rgba(148, 176, 214, 0.30)` | `rgba(15, 37, 64, 0.22)` | Hover/active border |
-| `--surface-tint` | `rgba(148, 176, 214, 0.05)` | `rgba(15, 37, 64, 0.035)` | Subtle elevation fill — `.item-row`'s resting background, and the default `--card-surface` for `.surface-card` (`.chapter-summary-box`) — theme-aware, unlike a hardcoded white-alpha tint |
-| `--surface-tint-strong` | `rgba(148, 176, 214, 0.11)` | `rgba(15, 37, 64, 0.07)` | Slightly stronger tint (`.tag`, `.section-num` chip, Pomodoro ring track) |
-| `--text-primary` | `#f2f7fb` | `#0c1826` | Headings, primary content |
-| `--text-secondary` | `#b3c2d6` | `#43566d` | Descriptions, inactive tabs |
-| `--text-muted` | `#8496ae` | `#6a7c93` | Metadata, footers, timestamps |
-| `--primary` | `#14b8a6` (Teal) | `#0f766e` | Brand color, active tab indicator, link color |
-| `--primary-hover` | `#0d9488` | `#115e59` | Primary button hover |
-| `--primary-glow` | `rgba(20, 184, 166, 0.35)` | `rgba(15, 118, 110, 0.20)` | Glow box-shadow |
-| `--primary-contrast` | `#04211d` | `#ffffff` | Foreground on a `--primary` fill (`.btn-primary`, `.filter-pill.active`, active Pomodoro pills) |
-| `--accent-lime` | `#84cc16` | `#4d7c0f` | Success / read+watched complete / chapter "done" status / Pomodoro break |
-| `--accent-lime-hover` | `#65a30d` | `#3f6212` | Break-mode primary button hover |
-| `--accent-lime-glow` | `rgba(132, 204, 22, 0.30)` | `rgba(77, 124, 15, 0.20)` | Lime glow (Pomodoro break ring) |
-| `--accent-amber` | `#fbbf24` | `#b45309` | Read-only warning state, chapter "in progress" status |
-| `--accent-rose` | `#fb7185` | `#be123c` | Danger action (reset), stop-signal box |
-| `--accent-sky` | `#60a5fa` | `#1d4ed8` | Info toast, external links |
-| `--accent-purple` | `#c084fc` | `#7e22ce` | Secondary accent gradient, lab/flashcard badges |
-| `--status-idle` | `#94a3b8` | `#64748b` | Chapter "not started" status — decoupled from `--text-muted` so idle chapters stay visible |
-| `--shadow-press` | `rgba(0, 0, 0, 0.25)` | `rgba(15, 37, 64, 0.18)` | Inset box-shadow on button/pill press |
+| `--bg-main` | `#f0eee6` | `#141413` | Main body background |
+| `--bg-card` | `#faf9f5` | `#1f1e1d` | Surface card background |
+| `--bg-card-hover` | `#e8e6dc` | `#292927` | Card hover background |
+| `--bg-glass` | `rgba(250, 249, 245, 0.85)` | `rgba(31, 30, 29, 0.80)` | Sticky header glass (`backdrop-filter: blur(12px)`) |
+| `--border-color` | `rgba(20, 20, 19, 0.10)` | `rgba(250, 249, 245, 0.10)` | Card/input/separator border — also the fill of `.progress-bar-track` |
+| `--border-color-strong` | `rgba(20, 20, 19, 0.20)` | `rgba(250, 249, 245, 0.20)` | Hover/active border |
+| `--surface-tint` | `rgba(20, 20, 19, 0.04)` | `rgba(250, 249, 245, 0.05)` | Subtle elevation fill — `.item-row`'s resting background, and the default `--card-surface` for `.surface-card` (`.chapter-summary-box`) — theme-aware, unlike a hardcoded white-alpha tint |
+| `--surface-tint-strong` | `rgba(20, 20, 19, 0.08)` | `rgba(250, 249, 245, 0.11)` | Slightly stronger tint (`.tag`, `.section-num` chip, Pomodoro ring track) |
+| `--text-primary` | `#141413` | `#faf9f5` | Headings, primary content |
+| `--text-secondary` | `#3d3d3a` | `#d1cfc5` | Descriptions, inactive tabs |
+| `--text-muted` | `#5e5d59` | `#b0aea5` | Metadata, footers, timestamps |
+| `--primary` | `#c6613f` (Clay) | `#d97757` | Brand color, active tab indicator, link color |
+| `--primary-hover` | `#a94e31` | `#e08f73` | Primary button hover |
+| `--primary-glow` | `rgba(198, 97, 63, 0.22)` | `rgba(217, 119, 87, 0.32)` | Glow box-shadow |
+| `--primary-contrast` | `#faf9f5` | `#141413` | Foreground on a `--primary` fill (`.btn-primary`, `.filter-pill.active`, active Pomodoro pills) |
+| `--accent-lime` | `#5f7049` (Olive) | `#bcd1ca` (Cactus) | Success / read+watched complete / chapter "done" status / Pomodoro break |
+| `--accent-lime-hover` | `#4c5a3a` | `#a3bdb4` | Break-mode primary button hover |
+| `--accent-lime-glow` | `rgba(120, 140, 93, 0.22)` | `rgba(188, 209, 202, 0.25)` | Lime glow (Pomodoro break ring) |
+| `--accent-amber` | `#a9724a` (Kraft) | `#d4a27f` | Read-only warning state, chapter "in progress" status |
+| `--accent-rose` | `#a8506e` (Fig) | `#c46686` | Danger action (reset), stop-signal box |
+| `--accent-sky` | `#3f72a6` (Sky) | `#6a9bcc` | Info toast, external links |
+| `--accent-purple` | `#5e5d85` (Heather) | `#cbcadb` | Secondary accent gradient, lab/flashcard badges |
+| `--status-idle` | `#87867f` (Cloud) | `#87867f` | Chapter "not started" status — decoupled from `--text-muted` so idle chapters stay visible |
+| `--shadow-press` | `rgba(20, 20, 19, 0.16)` | `rgba(0, 0, 0, 0.5)` | Inset box-shadow on button/pill press |
 
 ### 1.3. Radius, Shadow, Transition Tokens
 
 ```css
---radius-sm: 6px;      /* Badges, tags, small buttons */
---radius-md: 12px;     /* Buttons, inputs, action icons */
---radius-lg: 18px;     /* Chapter cards, metric cards */
+--radius-sm: 4px;      /* Badges, tags, small buttons */
+--radius-md: 8px;      /* Buttons, inputs, action icons */
+--radius-lg: 16px;     /* Chapter cards, metric cards */
 --radius-full: 9999px; /* Progress rings, status pills */
 
---shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
---shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+--shadow-sm: 0 1px 2px rgba(20, 20, 19, 0.06);
+--shadow-md: 0 4px 14px rgba(20, 20, 19, 0.08);
 
 --transition-fast: 0.15s ease;
 --transition-normal: 0.25s ease;
 
---font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+--font-sans: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+--font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+--font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+--font-family: var(--font-sans);
 ```
 
-`Inter` (weights 400–800) loads from Google Fonts in `index.html` with `display=swap`; the system-font fallback stack paints first so there's no invisible-text flash.
+`Figtree`, `Newsreader` and `JetBrains Mono` load from Google Fonts in `index.html` with `display=swap`; the system-font fallback stacks paint first so there's no invisible-text flash. These are free stand-ins for Anthropic's proprietary `Anthropic Sans`/`Anthropic Serif`/`Anthropic Mono` (the mono choice matches anthropic.com's own, which also ships JetBrains Mono).
+
+**Type roles** — mirrors Anthropic's serif-for-reading / sans-for-UI / mono-for-numbers split:
+- **Serif** (`--font-serif`): `h1`–`h4`, card/section headings (`.surface-card-title`, `.progress-title`, `.chapter-card-title`, `.resource-title`, `.quit-card-title`, …) and longer-form body copy (`.resource-desc`, `.deliverable-checkbox` label).
+- **Sans** (`--font-family` default): everything else — nav tabs, buttons, badges, form controls, toasts.
+- **Mono** (`--font-mono`), paired with `font-variant-numeric: tabular-nums`: numeric detail — `.metric-value`, progress percentages, `.chapter-progress-pct`/`.chapter-card-pct`, `.section-num`, the Pomodoro countdown and its custom-duration inputs.
 
 ### 1.4. Spacing & Typography Scale
 
@@ -68,15 +78,15 @@ Every `padding`/`gap`/`font-size` is a token, not a raw rem literal — snapped 
 --space-sm:  0.75rem;  --space-md:  1rem;      --space-lg: 1.25rem;
 --space-xl:  1.5rem;   --space-2xl: 2rem;      --space-3xl: 2.5rem;
 
---font-size-2xs: 0.7rem;  --font-size-xs: 0.75rem;  --font-size-sm: 0.85rem;
---font-size-md:  0.9rem;  --font-size-base: 0.95rem; --font-size-lg: 1.1rem;
---font-size-xl:  1.25rem; --font-size-2xl: 1.6rem;   --font-size-3xl: 3.5rem; /* Pomodoro digits only */
+--font-size-2xs: 0.75rem;   --font-size-xs: 0.8125rem; --font-size-sm: 0.875rem;
+--font-size-md:  0.9375rem; --font-size-base: 1rem;    --font-size-lg: 1.125rem;
+--font-size-xl:  1.25rem;   --font-size-2xl: 2rem;     --font-size-3xl: 3.5rem; /* Pomodoro digits only */
 
 --font-weight-normal: 400;  --font-weight-medium: 500;  --font-weight-semibold: 600;
 --font-weight-bold: 700;    --font-weight-black: 800;
 
 --line-height-tight: 1.2;  --line-height-snug: 1.4;  --line-height-normal: 1.5;  --line-height-relaxed: 1.6;
---letter-spacing-tighter: -0.04em; --letter-spacing-tight: -0.02em;
+--letter-spacing-tighter: -0.02em; --letter-spacing-tight: -0.015em;
 --letter-spacing-wide: 0.04em;     --letter-spacing-wider: 0.08em;
 ```
 

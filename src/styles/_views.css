@@ -1,3 +1,20 @@
+/* Type roles: serif for titles/body copy, mono for numeric detail */
+.chapter-progress-title,
+.chapter-card-title,
+.resource-title,
+.resource-desc,
+.quit-card-title,
+.deliverable-checkbox {
+  font-family: var(--font-serif);
+}
+
+.chapter-progress-pct,
+.chapter-card-pct,
+.section-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Dashboard: per-chapter progress list */
 .chapter-progress-list {
   display: flex;
