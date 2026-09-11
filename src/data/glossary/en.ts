@@ -146,7 +146,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     name: "Code review with AI",
     chapterIds: ["ch-4", "ch-5"],
     description: "Using an AI assistant to help read/review code (human- or AI-written) before merging — a thread running through chapters 4 and 5.",
-    refUrl: "https://github.blog/ai-and-ml/generative-ai/how-to-use-github-copilot-in-your-code-review-process/",
+    refUrl: "https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/",
   },
 
   // Chapter 5 — Collaborating Inside an AI-Powered Team

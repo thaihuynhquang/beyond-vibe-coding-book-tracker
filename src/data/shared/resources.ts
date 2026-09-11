@@ -29,7 +29,7 @@ const READING_RESOURCES: Resource[] = [
   // Chapter 5 — Collaborating Inside an AI-Powered Team
   { id: "res-ch-5-1", chapterId: "ch-5", type: "article", title: "Model Context Protocol — Introduction", url: "https://modelcontextprotocol.io/introduction" },
   { id: "res-ch-5-2", chapterId: "ch-5", type: "article", title: "Wikipedia — Prompt injection", url: "https://en.wikipedia.org/wiki/Prompt_injection" },
-  { id: "res-ch-5-3", chapterId: "ch-5", type: "article", title: "GitHub — Code review best practices with AI assistants", url: "https://github.blog/ai-and-ml/generative-ai/how-to-use-github-copilot-in-your-code-review-process/" },
+  { id: "res-ch-5-3", chapterId: "ch-5", type: "article", title: "GitHub — Code review best practices with AI assistants", url: "https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/" },
   // Chapter A1 (ch-a1) — Demystifying Large Language Models
   { id: "res-ch-a1-1", chapterId: "ch-a1", type: "spec", title: "Attention Is All You Need (arXiv)", url: "https://arxiv.org/abs/1706.03762" },
   { id: "res-ch-a1-2", chapterId: "ch-a1", type: "article", title: "IBM — What are large language models (LLMs)?", url: "https://www.ibm.com/think/topics/large-language-models" },
