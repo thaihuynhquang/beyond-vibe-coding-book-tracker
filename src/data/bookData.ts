@@ -61,11 +61,24 @@ function assertContentCounts(): void {
   }
 }
 
+function assertNoDuplicateUrls(): void {
+  if (import.meta.env.PROD) return;
+  const urls = [...getGlossaryEn().map((t) => t.refUrl), ...getResourcesEn().map((r) => r.url)];
+  const seen = new Set<string>();
+  for (const url of urls) {
+    if (seen.has(url)) {
+      console.error(`[bookData] duplicate resource URL across glossary/resources: ${url}`);
+    }
+    seen.add(url);
+  }
+}
+
 assertIdSetsMatch("chapters", getChaptersVi().map((c) => c.id), getChaptersEn().map((c) => c.id));
 assertIdSetsMatch("labs", getLabsVi().map((l) => l.id), getLabsEn().map((l) => l.id));
 assertIdSetsMatch("quitCriteria", getQuitCriteriaVi().map((q) => q.id), getQuitCriteriaEn().map((q) => q.id));
 assertIdSetsMatch("glossary", getGlossaryVi().map((t) => t.id), getGlossaryEn().map((t) => t.id));
 assertContentCounts();
+assertNoDuplicateUrls();
 
 function lang(): Lang {
   return getLangState();

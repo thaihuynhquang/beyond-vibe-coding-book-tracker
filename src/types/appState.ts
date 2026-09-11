@@ -47,6 +47,8 @@ export interface FlashcardTask {
   chapterId: string;
 }
 
+export type ResourceType = "mdn" | "spec" | "article" | "video" | "demo" | "tool";
+
 export interface GlossaryTerm {
   id: string;
   name: string;
@@ -54,9 +56,8 @@ export interface GlossaryTerm {
   description: string;
   refUrl: string;
   specUrl?: string;
+  resourceType?: ResourceType;
 }
-
-export type ResourceType = "mdn" | "spec" | "article" | "video" | "demo" | "tool";
 
 export interface Resource {
   id: string;

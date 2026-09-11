@@ -50,7 +50,7 @@ Detailed directory tree, file responsibilities, and module layout for the **Beyo
 │   │       ├── chapterMeta.ts      # CHAPTER_META: chapter id/num/title/labIds/flashcardId/glossaryRefs
 │   │       ├── labMeta.ts          # LAB_META: lab id/chapterId/videoId/toolsUsed
 │   │       ├── flashcards.ts       # FLASHCARD_TASKS: 6 FlashcardTask objects
-│   │       └── resources.ts        # RESOURCES: the 20 videos (as type "video") + reading-link resources, title shared across locales
+│   │       └── resources.ts        # RESOURCES: the 20 videos (as type "video") + 8 reading-link resources (URLs that duplicate a glossary term's refUrl live only on that term, via resourceType), title shared across locales
 │   ├── i18n/
 │   │   ├── strings.ts              # UI_STRINGS table, one flat key -> string map per language
 │   │   ├── index.ts                # t(key, params) + plural(n, vi, enOne, enOther)

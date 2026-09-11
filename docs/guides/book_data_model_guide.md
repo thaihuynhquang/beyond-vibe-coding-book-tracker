@@ -74,6 +74,7 @@ export interface GlossaryTerm {
   description: string;   // localized prose — one array per language, see glossary/vi.ts / glossary/en.ts
   refUrl: string;         // primary reference (Wikipedia, official docs, vendor blog — not MDN-only, this isn't a Web API glossary)
   specUrl?: string;       // secondary deep-dive link (e.g. the arXiv paper for Attention/Transformer terms)
+  resourceType?: ResourceType; // set when refUrl doubles as a curated reading resource — Resources tab renders a second badge instead of a duplicate card
 }
 
 export interface Resource {

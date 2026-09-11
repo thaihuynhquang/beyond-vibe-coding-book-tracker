@@ -1,6 +1,6 @@
 # THƯ VIỆN TÀI NGUYÊN — PROCESS OVER MAGIC: BEYOND VIBE CODING
 
-Nguồn nội dung cho `Resource[]` (xem schema ở **[book_data_model_guide.md](../guides/book_data_model_guide.md)**). Gồm 2 nhóm: **20 video companion** (`type: "video"`, sinh tự động từ `src/data/shared/videos.ts`) và **đọc thêm** (`type` khác) — bài viết/spec/paper/tool liên quan tới từng chương. Glossary ngắn gọn nằm ở `glossary.md`.
+Nguồn nội dung cho `Resource[]` (xem schema ở **[book_data_model_guide.md](../guides/book_data_model_guide.md)**). Gồm 2 nhóm: **20 video companion** (`type: "video"`, sinh tự động từ `src/data/shared/videos.ts`) và **đọc thêm** (`type` khác) — bài viết/spec/paper/tool liên quan tới từng chương. Glossary ngắn gọn nằm ở `glossary.md`. Khi một link đọc thêm trùng URL với một thuật ngữ glossary, link đó **không** lặp lại ở đây — nó sống trong `glossary.md` dưới dạng `resourceType` của thuật ngữ, để tab Resources không hiện 2 thẻ cùng 1 URL.
 
 > Sách gốc: [Process Over Magic: Beyond Vibe Coding (PragProg)](https://pragprog.com/titles/ubaidev/process-over-magic-beyond-vibe-coding/)
 > Playlist video companion: https://www.youtube.com/playlist?list=PLUeffUYYqoHrUy1_VrwLxBybjHNL7p9Mz
@@ -43,40 +43,29 @@ Chương 5 và Phụ lục A1 không có video companion.
 | id | type | Tiêu đề | URL |
 | :--- | :--- | :--- | :--- |
 | res-ch-1-1 | article | Karpathy's original "vibe coding" post | https://x.com/karpathy/status/1886192184808149383 |
-| res-ch-1-2 | article | Wikipedia — Vibe coding | https://en.wikipedia.org/wiki/Vibe_coding |
-| res-ch-1-3 | article | Prompt Engineering Guide | https://www.promptingguide.ai/ |
+| res-ch-1-2 | article | Prompt Engineering Guide | https://www.promptingguide.ai/ |
 
 ### Chương 2 — Building Securely and Predictably
 
 | id | type | Tiêu đề | URL |
 | :--- | :--- | :--- | :--- |
-| res-ch-2-1 | article | Anthropic — Building effective agents | https://www.anthropic.com/research/building-effective-agents |
-| res-ch-2-2 | article | OWASP Top 10 for LLM Applications | https://owasp.org/www-project-top-10-for-large-language-model-applications/ |
-| res-ch-2-3 | article | Pinecone — What is a vector database? | https://www.pinecone.io/learn/vector-database/ |
+| res-ch-2-1 | article | OWASP Top 10 for LLM Applications | https://owasp.org/www-project-top-10-for-large-language-model-applications/ |
+| res-ch-2-2 | article | Pinecone — What is a vector database? | https://www.pinecone.io/learn/vector-database/ |
 
 ### Chương 3 — Learning by Coding
 
 | id | type | Tiêu đề | URL |
 | :--- | :--- | :--- | :--- |
-| res-ch-3-1 | article | Extreme Programming — Walking Skeleton | http://www.extremeprogramming.org/rules/skeleton.html |
-| res-ch-3-2 | article | Domain-Driven Design reference (Eric Evans) | https://www.domainlanguage.com/ddd/reference/ |
-| res-ch-3-3 | tool | Elixir — Official getting started guide | https://elixir-lang.org/getting-started/introduction.html |
+| res-ch-3-1 | article | Domain-Driven Design reference (Eric Evans) | https://www.domainlanguage.com/ddd/reference/ |
+| res-ch-3-2 | tool | Elixir — Official getting started guide | https://elixir-lang.org/getting-started/introduction.html |
 
 ### Chương 4 — Working on a Large Codebase
 
-| id | type | Tiêu đề | URL |
-| :--- | :--- | :--- | :--- |
-| res-ch-4-1 | article | Wikipedia — Technical debt | https://en.wikipedia.org/wiki/Technical_debt |
-| res-ch-4-2 | article | Wikipedia — Legacy system | https://en.wikipedia.org/wiki/Legacy_system |
-| res-ch-4-3 | tool | Mermaid — Diagramming and charting tool | https://mermaid.js.org/ |
+Không có link đọc thêm riêng — xem `term-technical-debt`, `term-legacy-code`, `term-mermaid-diagram` ở `glossary.md`.
 
 ### Chương 5 — Collaborating Inside an AI-Powered Team
 
-| id | type | Tiêu đề | URL |
-| :--- | :--- | :--- | :--- |
-| res-ch-5-1 | article | Model Context Protocol — Introduction | https://modelcontextprotocol.io/introduction |
-| res-ch-5-2 | article | Wikipedia — Prompt injection | https://en.wikipedia.org/wiki/Prompt_injection |
-| res-ch-5-3 | article | GitHub — Code review with AI assistants | https://github.blog/ai-and-ml/generative-ai/how-to-use-github-copilot-in-your-code-review-process/ |
+Không có link đọc thêm riêng — xem `term-agent`, `term-mcp`, `term-prompt-injection`, `term-code-review-with-ai` ở `glossary.md`.
 
 ### Phụ lục A1 — Demystifying Large Language Models
 
@@ -84,5 +73,3 @@ Chương 5 và Phụ lục A1 không có video companion.
 | :--- | :--- | :--- | :--- |
 | res-ch-a1-1 | spec | Attention Is All You Need (arXiv) | https://arxiv.org/abs/1706.03762 |
 | res-ch-a1-2 | article | IBM — What are large language models (LLMs)? | https://www.ibm.com/think/topics/large-language-models |
-| res-ch-a1-3 | tool | OpenAI — Tokenizer (interactive) | https://platform.openai.com/tokenizer |
-| res-ch-a1-4 | article | IBM — What is quantization-aware training? | https://www.ibm.com/think/topics/quantization-aware-training |

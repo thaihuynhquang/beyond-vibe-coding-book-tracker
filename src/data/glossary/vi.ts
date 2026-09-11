@@ -8,6 +8,7 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-1"],
     description: "Lập trình bằng cách mô tả ý muốn cho AI qua prompt và chấp nhận code sinh ra mà không đọc kỹ — thuật ngữ do Andrej Karpathy đặt ra tháng 2/2025 (1.1).",
     refUrl: "https://en.wikipedia.org/wiki/Vibe_coding",
+    resourceType: "article",
   },
   {
     id: "term-prompt-engineering",
@@ -110,6 +111,7 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-3"],
     description: "Phiên bản tối thiểu chạy được xuyên suốt end-to-end (UI → logic → output), dùng để chứng minh kiến trúc thông trước khi phát triển tiếp — chủ đề của 3.3.",
     refUrl: "http://www.extremeprogramming.org/rules/skeleton.html",
+    resourceType: "article",
   },
   {
     id: "term-domain-modeling",
@@ -126,6 +128,7 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-4"],
     description: "Chi phí phải trả sau này vì chọn giải pháp nhanh/dễ thay vì giải pháp đúng đắn hơn — chủ đề \"Managing Technical Debt\" (4.1).",
     refUrl: "https://en.wikipedia.org/wiki/Technical_debt",
+    resourceType: "article",
   },
   {
     id: "term-legacy-code",
@@ -133,6 +136,7 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-4"],
     description: "Code cũ, thường thiếu test, khó thay đổi an toàn — 4.2 Understanding Legacy Code bàn cách AI hỗ trợ tiếp cận nó.",
     refUrl: "https://en.wikipedia.org/wiki/Legacy_system",
+    resourceType: "article",
   },
   {
     id: "term-mermaid-diagram",
@@ -140,6 +144,7 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-4"],
     description: "Cú pháp text-to-diagram để vẽ flowchart/sequence diagram — dùng trong video \"Generating Mermaid Documentation Diagrams with AI Assistants\".",
     refUrl: "https://mermaid.js.org/",
+    resourceType: "tool",
   },
   {
     id: "term-code-review-with-ai",
@@ -147,15 +152,17 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-4", "ch-5"],
     description: "Dùng AI assistant hỗ trợ đọc/soát code (của người hoặc của chính AI khác sinh ra) trước khi merge — chủ đề xuyên suốt chương 4 và 5.",
     refUrl: "https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/",
+    resourceType: "article",
   },
 
   // Chapter 5 — Collaborating Inside an AI-Powered Team
   {
     id: "term-agent",
     name: "AI agent",
-    chapterIds: ["ch-5"],
+    chapterIds: ["ch-2", "ch-5"],
     description: "Hệ thống LLM có thể tự lên kế hoạch, gọi tool, và hành động nhiều bước để đạt mục tiêu, thay vì chỉ trả lời 1 lượt — nền tảng của \"Adopting AI\" (5.1).",
     refUrl: "https://www.anthropic.com/research/building-effective-agents",
+    resourceType: "article",
   },
   {
     id: "term-mcp",
@@ -163,6 +170,7 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-5"],
     description: "Chuẩn mở do Anthropic giới thiệu để AI assistant kết nối thống nhất với công cụ/dữ liệu ngoài — liên quan tới cách team tổ chức công cụ AI dùng chung.",
     refUrl: "https://modelcontextprotocol.io/introduction",
+    resourceType: "article",
   },
   {
     id: "term-pair-programming-with-ai",
@@ -177,6 +185,7 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-5"],
     description: "Kiểu tấn công chèn chỉ dẫn độc hại vào nội dung AI đọc được (file, trang web, output tool) để đánh lừa AI làm việc ngoài ý muốn — rủi ro bảo mật ở 5.3.",
     refUrl: "https://en.wikipedia.org/wiki/Prompt_injection",
+    resourceType: "article",
   },
 
   // Appendix A1 — Demystifying Large Language Models
@@ -209,6 +218,7 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-a1"],
     description: "Quá trình chia văn bản thành các token (đơn vị nhỏ) mà LLM xử lý — cần hiểu để biết vì sao context window đo bằng token, không phải ký tự.",
     refUrl: "https://platform.openai.com/tokenizer",
+    resourceType: "tool",
   },
   {
     id: "term-context-window",
@@ -237,5 +247,6 @@ export const GLOSSARY_VI: GlossaryTerm[] = [
     chapterIds: ["ch-a1"],
     description: "Kỹ thuật giảm độ chính xác số học của trọng số model (ví dụ 32-bit → 4-bit) để chạy nhẹ hơn, nhanh hơn, đánh đổi một phần độ chính xác.",
     refUrl: "https://www.ibm.com/think/topics/quantization-aware-training",
+    resourceType: "article",
   },
 ];

@@ -11,7 +11,7 @@ type ResourceKind = "term" | ResourceType;
 
 interface ResourceItem {
   id: string;
-  kind: ResourceKind;
+  kinds: ResourceKind[];
   title: string;
   description: string;
   chapterIds: string[];
@@ -80,7 +80,7 @@ export class BookViewResources extends BookView {
 
     const termItems: ResourceItem[] = getGlossary().map((term: GlossaryTerm) => ({
       id: term.id,
-      kind: "term",
+      kinds: term.resourceType ? ["term", term.resourceType] : ["term"],
       title: term.name,
       description: term.description,
       chapterIds: term.chapterIds,
@@ -93,7 +93,7 @@ export class BookViewResources extends BookView {
 
     const linkItems: ResourceItem[] = getResources().map((resource: Resource) => ({
       id: resource.id,
-      kind: resource.type,
+      kinds: [resource.type],
       title: resource.title,
       description: chapterTitleById.get(resource.chapterId) ?? resource.chapterId,
       chapterIds: [resource.chapterId],
@@ -104,8 +104,8 @@ export class BookViewResources extends BookView {
 
     return [...termItems, ...linkItems].sort((a, b) => {
       if (a.sortChapterNum !== b.sortChapterNum) return a.sortChapterNum - b.sortChapterNum;
-      if (a.kind === "term" && b.kind !== "term") return -1;
-      if (a.kind !== "term" && b.kind === "term") return 1;
+      if (a.kinds[0] === "term" && b.kinds[0] !== "term") return -1;
+      if (a.kinds[0] !== "term" && b.kinds[0] === "term") return 1;
       return a.title.localeCompare(b.title);
     });
   }
@@ -137,7 +137,7 @@ export class BookViewResources extends BookView {
       <article class="resource-card">
         <div class="resource-card-body">
           <div class="resource-tag-row">
-            <span class="resource-badge resource-badge--${escapeHtml(item.kind)}">${icon(BADGE_ICON[item.kind])} ${escapeHtml(t(BADGE_LABEL_KEY[item.kind]))}</span>
+            ${item.kinds.map((kind) => `<span class="resource-badge resource-badge--${escapeHtml(kind)}">${icon(BADGE_ICON[kind])} ${escapeHtml(t(BADGE_LABEL_KEY[kind]))}</span>`).join("")}
             ${item.chapterIds.map((id) => `<span class="tag tag--primary" title="${escapeHtml(chapterTitleById.get(id) ?? id)}">${id.replace("ch-", "Ch. ")}</span>`).join("")}
           </div>
           <h3 class="resource-title">${escapeHtml(item.title)}</h3>

@@ -8,6 +8,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-1"],
     description: "Coding by describing intent to an AI in prompts and accepting the generated code without close review — a term coined by Andrej Karpathy in February 2025 (1.1).",
     refUrl: "https://en.wikipedia.org/wiki/Vibe_coding",
+    resourceType: "article",
   },
   {
     id: "term-prompt-engineering",
@@ -110,6 +111,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-3"],
     description: "A minimal, end-to-end runnable slice (UI → logic → output) used to prove the architecture works before building further — the subject of 3.3.",
     refUrl: "http://www.extremeprogramming.org/rules/skeleton.html",
+    resourceType: "article",
   },
   {
     id: "term-domain-modeling",
@@ -126,6 +128,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-4"],
     description: "The future cost of picking a fast/easy solution over a more correct one — the subject of \"Managing Technical Debt\" (4.1).",
     refUrl: "https://en.wikipedia.org/wiki/Technical_debt",
+    resourceType: "article",
   },
   {
     id: "term-legacy-code",
@@ -133,6 +136,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-4"],
     description: "Old code, often under-tested and risky to change — 4.2 Understanding Legacy Code covers how AI can help approach it.",
     refUrl: "https://en.wikipedia.org/wiki/Legacy_system",
+    resourceType: "article",
   },
   {
     id: "term-mermaid-diagram",
@@ -140,6 +144,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-4"],
     description: "A text-to-diagram syntax for drawing flowcharts/sequence diagrams — used in the \"Generating Mermaid Documentation Diagrams with AI Assistants\" video.",
     refUrl: "https://mermaid.js.org/",
+    resourceType: "tool",
   },
   {
     id: "term-code-review-with-ai",
@@ -147,15 +152,17 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-4", "ch-5"],
     description: "Using an AI assistant to help read/review code (human- or AI-written) before merging — a thread running through chapters 4 and 5.",
     refUrl: "https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/",
+    resourceType: "article",
   },
 
   // Chapter 5 — Collaborating Inside an AI-Powered Team
   {
     id: "term-agent",
     name: "AI agent",
-    chapterIds: ["ch-5"],
+    chapterIds: ["ch-2", "ch-5"],
     description: "An LLM-based system that can plan, call tools, and act over multiple steps toward a goal, rather than answering in a single turn — the basis of \"Adopting AI\" (5.1).",
     refUrl: "https://www.anthropic.com/research/building-effective-agents",
+    resourceType: "article",
   },
   {
     id: "term-mcp",
@@ -163,6 +170,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-5"],
     description: "An open standard from Anthropic for AI assistants to connect uniformly to external tools/data — relevant to how a team shares AI tooling.",
     refUrl: "https://modelcontextprotocol.io/introduction",
+    resourceType: "article",
   },
   {
     id: "term-pair-programming-with-ai",
@@ -177,6 +185,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-5"],
     description: "An attack that hides malicious instructions inside content the AI reads (a file, a webpage, tool output) to make it act against the user's intent — a security risk covered in 5.3.",
     refUrl: "https://en.wikipedia.org/wiki/Prompt_injection",
+    resourceType: "article",
   },
 
   // Appendix A1 — Demystifying Large Language Models
@@ -209,6 +218,7 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-a1"],
     description: "Splitting text into tokens, the small units an LLM actually processes — needed to understand why context windows are measured in tokens, not characters.",
     refUrl: "https://platform.openai.com/tokenizer",
+    resourceType: "tool",
   },
   {
     id: "term-context-window",
@@ -237,5 +247,6 @@ export const GLOSSARY_EN: GlossaryTerm[] = [
     chapterIds: ["ch-a1"],
     description: "Reducing the numeric precision of a model's weights (e.g. 32-bit → 4-bit) to run lighter and faster, trading off some accuracy.",
     refUrl: "https://www.ibm.com/think/topics/quantization-aware-training",
+    resourceType: "article",
   },
 ];
