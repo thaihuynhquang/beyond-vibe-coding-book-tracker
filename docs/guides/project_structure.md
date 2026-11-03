@@ -59,7 +59,7 @@ Detailed directory tree, file responsibilities, and module layout for the **Beyo
 │   │   └── storage.ts              # AppState singleton, localStorage, read/videoWatched/lab/flashcard toggles, Pomodoro logs
 │   ├── styles/
 │   │   ├── main.css
-│   │   ├── _tokens.css              # Colors, spacing scale, typography scale, radius, shadow tokens
+│   │   ├── _tokens.css              # Colors, spacing scale, typography scale, border, shadow tokens
 │   │   ├── _reset-base.css          # Includes prefers-reduced-motion guard
 │   │   ├── _header.css
 │   │   ├── _tabs.css
